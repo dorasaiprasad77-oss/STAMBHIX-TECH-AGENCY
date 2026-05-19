@@ -88,11 +88,18 @@ app.use(errorHandler);
 
 // Start server
 const startServer = async () => {
-  await connectDB();
+  // Start listening immediately so health checks work even while DB connects
   app.listen(PORT, () => {
     console.log(`MemoryChain API server running on port ${PORT}`);
     console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   });
+  // Then connect to DB (delays server start by ~2s if DB is unreachable)
+  try {
+    await connectDB();
+  } catch (err) {
+    console.error(`Failed to connect to MongoDB: ${err.message}`);
+    console.error('Server is running but database features will not work until MongoDB is configured.');
+  }
 };
 
 startServer();
