@@ -8,13 +8,15 @@ const path = require('path');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 
-// Validate required environment variables
+// Validate required environment variables (warn only — server should still start for health checks)
 const requiredEnvVars = ['MONGODB_URI', 'JWT_SECRET'];
 const missingEnvVars = requiredEnvVars.filter(key => !process.env[key]);
 if (missingEnvVars.length > 0) {
-  console.error(`Missing required environment variables: ${missingEnvVars.join(', ')}`);
-  console.error('Please create a .env file based on .env.example');
-  process.exit(1);
+  console.warn(`⚠ Missing required environment variables: ${missingEnvVars.join(', ')}`);
+  console.warn('  Server will start but some features may not work until these are set.');
+  if (process.env.RENDER) {
+    console.warn('  Set these in your Render dashboard → Environment tab.');
+  }
 }
 
 // Import routes
