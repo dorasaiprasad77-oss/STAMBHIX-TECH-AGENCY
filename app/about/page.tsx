@@ -7,23 +7,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const timeline = [
-  { year: '2020', title: 'The Beginning', desc: 'Stambhix was founded with a vision to bridge the gap between digital and local services.' },
-  { year: '2021', title: 'First 100 Clients', desc: 'Reached our first 100 clients milestone with a focus on web development and UI/UX design.' },
-  { year: '2022', title: 'Expanded to Home Services', desc: 'Launched the home services vertical — plumbing, electrical, carpentry — with verified professionals.' },
-  { year: '2023', title: 'Pan-India Presence', desc: 'Expanded operations to 15+ cities with 50+ expert professionals on the platform.' },
-  { year: '2024', title: 'AI-Powered Platform', desc: 'Integrated AI-driven service recommendations and launched our mobile app ecosystem.' },
-  { year: '2025', title: 'The Future', desc: 'Scaling globally with new service categories, enterprise partnerships, and community initiatives.' },
+  { year: '2025', title: 'The Beginning', desc: 'Stambhix Tech Agency was founded with a vision to deliver quality digital services to businesses of all sizes.' },
+  { year: '2025', title: 'First Project', desc: 'Building and launching our very first client project — learning and growing with every line of code.' },
+  { year: '2025', title: 'Team Formation', desc: 'Assembling a passionate team of developers, designers, and strategists who share our vision.' },
+  { year: '2025', title: 'Looking Ahead', desc: 'Eager to take on new challenges, serve our first clients, and build a reputation for excellence.' },
 ];
 
 const team = [
-  { name: 'Arjun Mehta', role: 'CEO & Founder', avatar: 'AM', bio: 'Visionary entrepreneur with 15+ years in tech. Building the future of service marketplaces.' },
-  { name: 'Priya Sharma', role: 'CTO', avatar: 'PS', bio: 'Full-stack architect and AI enthusiast. Leads our engineering and product innovation.' },
-  { name: 'Rahul Verma', role: 'COO', avatar: 'RV', bio: 'Operations expert ensuring seamless service delivery across all our verticals.' },
-  { name: 'Neha Patel', role: 'Head of Design', avatar: 'NP', bio: 'Award-winning designer creating intuitive and beautiful user experiences.' },
-  { name: 'Vikram Singh', role: 'VP of Engineering', avatar: 'VS', bio: 'Scales distributed systems and leads our platform engineering team.' },
-  { name: 'Ananya Gupta', role: 'Head of Marketing', avatar: 'AG', bio: 'Growth strategist driving brand awareness and customer acquisition.' },
-  { name: 'Rajesh Kumar', role: 'VP of Operations', avatar: 'RK', bio: 'Ensures quality and reliability across our home services network.' },
-  { name: 'Deepika Reddy', role: 'Head of Customer Success', avatar: 'DR', bio: 'Customer-obsessed leader building world-class support experiences.' },
+  { name: 'Sai Prasad Dora', role: 'Founder & Developer', avatar: 'SP', bio: 'Passionate about building beautiful, functional web experiences. Full-stack developer and founder of Stambhix.' },
 ];
 
 const values = [
@@ -99,7 +90,7 @@ export default function AboutPage() {
                 <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#D4A853]/20 to-transparent border border-[#D4A853]/10 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-8xl mb-4">✦</div>
-                    <div className="text-[#D4A853] text-lg font-medium">Est. 2020</div>
+                    <div className="text-[#D4A853] text-lg font-medium">Est. 2025</div>
                   </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 gold-gradient rounded-2xl opacity-10" />
@@ -109,12 +100,12 @@ export default function AboutPage() {
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4A853]/20 bg-[#D4A853]/5 text-[#D4A853] text-sm font-medium tracking-wide mb-4">Our Story</span>
               <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
                 From a Bold Idea to a{' '}
-                <span className="gold-text-gradient">Nationwide Movement</span>
+                <span className="gold-text-gradient">Growing Agency</span>
               </h2>
               <div className="space-y-4 text-secondary leading-relaxed">
-                <p>Stambhix was born from a simple observation: finding trusted professionals for services — whether building a website or fixing a leaky pipe — was broken. Fragmented. Untrustworthy.</p>
-                <p>We set out to build a platform that brings together the best digital talent and local service professionals under one roof. Every professional is verified, every review is authentic, and every transaction is secure.</p>
-                <p>Today, we serve thousands of clients across 15+ cities, with a team of 50+ experts dedicated to delivering excellence in every service we touch.</p>
+                <p>Stambhix Tech Agency was born from a simple observation: finding a reliable digital partner should be easy. Whether you need a website, an app, or a complete digital presence — you deserve a team that cares.</p>
+                <p>We may be a small team starting out, but we bring big energy, fresh ideas, and a commitment to quality that rivals the best in the industry. Every project we take on gets our full attention and dedication.</p>
+                <p>We believe in honest work, transparent communication, and building long-term relationships with our clients. Your success is our success — and we can&apos;t wait to grow together.</p>
               </div>
             </FadeIn>
           </div>
@@ -191,7 +182,7 @@ export default function AboutPage() {
               Ready to Work with Us?
             </h2>
             <p className="text-secondary text-lg mb-8 max-w-2xl mx-auto">
-              Join hundreds of businesses and homeowners who trust Stambhix for their service needs.
+              We're a small but passionate team ready to help you build your digital presence. Let's grow together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/services" className="px-8 py-3.5 gold-gradient text-black font-semibold rounded-xl hover:scale-105 transition-transform">

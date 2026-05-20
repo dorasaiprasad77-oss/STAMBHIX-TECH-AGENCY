@@ -172,21 +172,22 @@ export default function StambhixHero() {
           {/* Trust indicators */}
           <motion.div variants={itemVariants} className="mt-16 flex flex-wrap items-center gap-8">
             <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full border-2 border-primary bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-primary text-xs font-bold"
-                >
-                  {String.fromCharCode(64 + i)}
-                </div>
-              ))}
-              <div className="w-10 h-10 rounded-full border-2 border-primary bg-[#D4A853] flex items-center justify-center text-black text-xs font-bold">
-                +
+              <div className="w-10 h-10 rounded-full border-2 border-primary gold-gradient flex items-center justify-center text-black text-xs font-bold">
+                S
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-primary gold-gradient flex items-center justify-center text-black text-xs font-bold">
+                T
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-primary gold-gradient flex items-center justify-center text-black text-xs font-bold">
+                A
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-primary bg-primary flex items-center justify-center text-primary text-xs font-bold border-dashed border-[#D4A853]/40">
+                ?
               </div>
             </div>
             <div>
-              <p className="text-primary font-semibold">500+ Trusted Clients</p>
-              <p className="text-tertiary text-sm">Across 15+ cities nationwide</p>
+              <p className="text-primary font-semibold">Building From Day One</p>
+              <p className="text-tertiary text-sm">Small team, big dreams — starting our journey</p>
             </div>
           </motion.div>
         </motion.div>
@@ -205,7 +206,7 @@ export default function StambhixHero() {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
                 <div className="text-5xl mb-2">✦</div>
-                <div className="text-[#D4A853] text-sm font-medium tracking-widest">EST. 2024</div>
+                <div className="text-[#D4A853] text-sm font-medium tracking-widest">EST. 2025</div>
               </div>
             </div>
           </div>

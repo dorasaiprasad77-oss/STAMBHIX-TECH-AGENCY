@@ -3,15 +3,13 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-
 const defaultStats = [
-  { number: '500+', label: 'Trusted Clients', icon: '🤝' },
-  { number: '1,200+', label: 'Projects Delivered', icon: '🚀' },
-  { number: '50+', label: 'Expert Professionals', icon: '⭐' },
-  { number: '15+', label: 'Cities Covered', icon: '📍' },
-  { number: '98%', label: 'Client Satisfaction', icon: '💯' },
-  { number: '24/7', label: 'Support Available', icon: '🔄' },
+  { number: '0→1', label: 'First Client Soon', icon: '🤝' },
+  { number: 'In Progress', label: 'Projects Building', icon: '🚀' },
+  { number: '2', label: 'Founders', icon: '⭐' },
+  { number: 'Starting', label: 'Our Journey', icon: '📍' },
+  { number: '100%', label: 'Dedication', icon: '💯' },
+  { number: 'Always', label: 'Available to Help', icon: '🔄' },
 ];
 
 const usps = [
@@ -53,18 +51,18 @@ export default function StambhixStats() {
   const statsInView = useInView(statsRef, { once: true, margin: '-50px' });
 
   useEffect(() => {
-    fetch(`${API_URL}/api/settings`)
+    fetch(`/api/settings`)
       .then((res) => res.ok ? res.json() : null)
       .then((json) => {
         if (json?.map) {
           const m = json.map;
           setStats([
-            { number: `${m.trusted_clients || 500}+`, label: 'Trusted Clients', icon: '🤝' },
-            { number: `${m.projects_delivered || 1200}+`, label: 'Projects Delivered', icon: '🚀' },
-            { number: `${m.expert_professionals || 50}+`, label: 'Expert Professionals', icon: '⭐' },
-            { number: `${m.cities_covered || 15}+`, label: 'Cities Covered', icon: '📍' },
-            { number: `${m.client_satisfaction || '98%'}`, label: 'Client Satisfaction', icon: '💯' },
-            { number: `${m.support_hours || '24/7'}`, label: 'Support Available', icon: '🔄' },
+            { number: `${m.trusted_clients || '0→1'}`, label: 'First Client Soon', icon: '🤝' },
+            { number: `${m.projects_delivered || 'In Progress'}`, label: 'Projects Building', icon: '🚀' },
+            { number: `${m.expert_professionals || '2'}`, label: 'Founders', icon: '⭐' },
+            { number: `${m.cities_covered || 'Starting'}`, label: 'Our Journey', icon: '📍' },
+            { number: `${m.client_satisfaction || '100%'}`, label: 'Dedication', icon: '💯' },
+            { number: `${m.support_hours || 'Always'}`, label: 'Available to Help', icon: '🔄' },
           ]);
         }
       })

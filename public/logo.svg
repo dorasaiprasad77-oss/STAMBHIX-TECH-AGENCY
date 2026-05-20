@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A853"/>
+      <stop offset="50%" stop-color="#F5C542"/>
+      <stop offset="100%" stop-color="#B8922E"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect x="10" y="10" width="180" height="180" rx="40" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+  <!-- Gold accent lines -->
+  <line x1="40" y1="50" x2="70" y2="50" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="40" y1="150" x2="70" y2="150" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Stylized S -->
+  <path d="M115 55C115 55 105 52 95 55C85 58 80 65 80 72C80 79 85 85 95 88C105 91 115 94 115 100C115 106 110 112 100 115C90 118 80 115 80 115" stroke="url(#goldGrad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M80 85C80 85 90 82 100 85C110 88 115 94 115 100C115 106 110 112 100 115C90 118 80 115 80 115" stroke="url(#goldGrad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Small decorative dots -->
+  <circle cx="130" cy="55" r="3" fill="#D4A853" opacity="0.6"/>
+  <circle cx="140" cy="65" r="2" fill="#D4A853" opacity="0.4"/>
+  <circle cx="130" cy="145" r="3" fill="#D4A853" opacity="0.6"/>
+  <circle cx="140" cy="135" r="2" fill="#D4A853" opacity="0.4"/>
+  <!-- Bottom text -->
+  <text x="100" y="180" text-anchor="middle" fill="#D4A853" font-family="system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="3">STAMBHIX</text>
+</svg>

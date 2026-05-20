@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-
 interface TeamMember {
   _id: string;
   name: string;
@@ -30,6 +28,27 @@ interface Achievement {
   order: number;
   isActive: boolean;
 }
+
+const fallbackMembers: TeamMember[] = [
+  {
+    _id: '1', name: 'Sai Prasad Dora', position: 'Founder & Developer',
+    bio: 'Passionate full-stack developer with expertise in React, Next.js, Node.js, and MongoDB. Building Stambhix from the ground up with dedication.',
+    avatar: '', socialLinks: { linkedin: '#', twitter: '#', github: '#', website: '#' },
+    order: 0, isActive: true,
+  },
+  {
+    _id: '2', name: 'Your Name Could Be Here', position: 'Looking for Team Members',
+    bio: 'We are looking for talented developers, designers, and marketers to join our growing team.',
+    avatar: '', socialLinks: { linkedin: '#', twitter: '#', github: '#', website: '#' },
+    order: 1, isActive: true,
+  },
+];
+
+const fallbackAchievements: Achievement[] = [
+  { _id: 'a1', title: 'Company Founded', description: 'Stambhix Tech Agency was officially launched.', date: '2025-01-01', icon: '🚀', category: 'milestone', metric: '', metricValue: '', order: 0, isActive: true },
+  { _id: 'a2', title: 'First Project Underway', description: 'Building our first client project with love and care.', date: '2025-02-01', icon: '💻', category: 'milestone', metric: '', metricValue: '', order: 1, isActive: true },
+  { _id: 'a3', title: 'Learning & Growing', description: 'Continuously learning new technologies to deliver the best solutions.', date: '2025-03-01', icon: '📚', category: 'growth', metric: '', metricValue: '', order: 2, isActive: true },
+];
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
@@ -74,39 +93,44 @@ function SectionHeading({ label, title, subtitle }: { label: string; title: stri
 }
 
 export default function TeamPage() {
-  const [members, setMembers] = useState<TeamMember[]>([]);
-  const [achievements, setAchievements] = useState<Achievement[]>([]);
+  const [members, setMembers] = useState<TeamMember[]>(fallbackMembers);
+  const [achievements, setAchievements] = useState<Achievement[]>(fallbackAchievements);
   const [loadingMembers, setLoadingMembers] = useState(true);
   const [loadingAchievements, setLoadingAchievements] = useState(true);
   const [memberError, setMemberError] = useState('');
   const [achievementError, setAchievementError] = useState('');
 
   useEffect(() => {
-    fetch(`${API_URL}/api/team`)
+    // Try fetching from API, but fallback to hardcoded data is already set
+    fetch(`/api/team`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load team');
         return res.json();
       })
       .then((json) => {
-        setMembers(json.data || []);
+        if (json.data && json.data.length > 0) {
+          setMembers(json.data);
+        }
         setLoadingMembers(false);
       })
-      .catch((err) => {
-        setMemberError(err.message);
+      .catch(() => {
+        // Using fallback data
         setLoadingMembers(false);
       });
 
-    fetch(`${API_URL}/api/achievements`)
+    fetch(`/api/achievements`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load achievements');
         return res.json();
       })
       .then((json) => {
-        setAchievements(json.data || []);
+        if (json.data && json.data.length > 0) {
+          setAchievements(json.data);
+        }
         setLoadingAchievements(false);
       })
-      .catch((err) => {
-        setAchievementError(err.message);
+      .catch(() => {
+        // Using fallback data
         setLoadingAchievements(false);
       });
   }, []);
@@ -143,7 +167,7 @@ export default function TeamPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-secondary text-lg max-w-3xl mx-auto leading-relaxed"
           >
-            A passionate group of innovators, engineers, designers, and problem-solvers dedicated to transforming how the world accesses services.
+            We&apos;re a small but passionate team ready to help you build your digital presence. Every project is a chance to prove ourselves.
           </motion.p>
         </div>
       </section>
@@ -153,8 +177,8 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Team Members"
-            title="The People Driving Our Vision"
-            subtitle="Each member brings unique expertise and passion to make Stambhix what it is today."
+            title="Meet Our Founders"
+            subtitle="We may be small now, but our ambition is limitless. Get to know the people behind Stambhix."
           />
 
           {loadingMembers ? (
@@ -241,8 +265,8 @@ export default function TeamPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Achievements"
-            title="Our Milestones & Wins"
-            subtitle="Every achievement reflects our commitment to excellence and the trust our clients place in us."
+            title="Our Journey So Far"
+            subtitle="Every big journey starts small. Here are our milestones on the road to building something great."
           />
 
           {loadingAchievements ? (

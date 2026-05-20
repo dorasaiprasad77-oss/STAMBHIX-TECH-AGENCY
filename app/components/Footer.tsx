@@ -41,9 +41,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold text-lg">
-                S
-              </div>
+              <img src="/logo-icon.svg" alt="Stambhix" className="w-10 h-10" />
               <span className="text-2xl font-bold text-primary">Stambhix</span>
             </Link>
             <p className="text-secondary text-sm leading-relaxed mb-6 max-w-sm">

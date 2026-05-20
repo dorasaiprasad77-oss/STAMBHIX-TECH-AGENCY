@@ -16,20 +16,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Stambhix Tech Agency — Digital & Home Service Marketplace",
   description:
-    "Stambhix is a premium technology and services agency offering web development, app development, UI/UX design, SEO, and home services. Trusted professionals, one platform.",
+    "Stambhix Tech Agency — We build modern websites, apps, and digital experiences. Small team, big ambitions, quality results.",
   keywords: [
     "tech agency",
     "web development",
     "app development",
     "UI UX design",
     "SEO",
-    "home services",
     "digital agency",
     "Stambhix",
+    "website builder",
   ],
   openGraph: {
     title: "Stambhix Tech Agency — Building Digital Futures",
-    description: "From cutting-edge digital solutions to trusted home services — Stambhix connects you with verified professionals.",
+    description: "Stambhix is a technology agency specializing in web development, app development, and digital solutions.",
     type: "website",
     locale: "en_IN",
   },

@@ -1,4 +1,5 @@
 {
+  "name": "stambhix-tech-agency",
   "framework": "nextjs",
   "buildCommand": "next build",
   "outputDirectory": ".next",

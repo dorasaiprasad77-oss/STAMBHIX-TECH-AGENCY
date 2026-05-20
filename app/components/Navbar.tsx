@@ -44,9 +44,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl gold-gradient flex items-center justify-center text-black font-bold text-base group-hover:scale-105 transition-transform">
-              S
-            </div>
+            <img src="/logo-icon.svg" alt="Stambhix" className="w-9 h-9 group-hover:scale-105 transition-transform" />
             <span className="text-xl font-bold text-primary">
               Stambhix<span className="text-[#D4A853]">.</span>
             </span>

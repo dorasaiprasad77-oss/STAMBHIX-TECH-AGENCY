@@ -2,6 +2,7 @@
 
 import StambhixHero from './components/StambhixHero';
 import StambhixServices from './components/StambhixServices';
+import StambhixAchievements from './components/StambhixAchievements';
 import StambhixStats from './components/StambhixStats';
 import StambhixTestimonials from './components/StambhixTestimonials';
 import StambhixContact from './components/StambhixContact';
@@ -16,6 +17,7 @@ export default function Home() {
       {/* Sections */}
       <StambhixHero />
       <StambhixServices />
+      <StambhixAchievements />
       <StambhixStats />
       <StambhixTestimonials />
       <StambhixContact />
