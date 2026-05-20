@@ -28,37 +28,41 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-indigo-950">
-      <div className="w-full max-w-md p-8">
+    <div className="min-h-screen flex items-center justify-center bg-primary relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 radial-gold" />
+      <div className="absolute inset-0 grid-pattern" />
+
+      <div className="w-full max-w-md p-8 relative z-10">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-            <span className="text-3xl">🧠</span>
-            MemoryChain
+          <Link href="/" className="inline-flex items-center gap-2 text-2xl font-bold">
+            <span className="gold-text-gradient text-3xl">✦</span>
+            <span className="gold-text-gradient">Stambhix</span>
           </Link>
-          <p className="mt-2 text-gray-600 dark:text-gray-400">Reset your password</p>
+          <p className="mt-2 text-secondary">Reset your password</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 space-y-6">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Forgot Password</h2>
+        <form onSubmit={handleSubmit} className="bg-secondary rounded-2xl shadow-theme-lg border border-primary p-8 space-y-6">
+          <h2 className="text-xl font-semibold text-primary">Forgot Password</h2>
 
           {error && (
-            <div className="bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-sm p-3 rounded-lg">
+            <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-sm p-3 rounded-xl">
               {error}
             </div>
           )}
 
           {success && (
-            <div className="bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-sm p-3 rounded-lg">
+            <div className="bg-green-500/10 border border-green-500/20 text-green-400 text-sm p-3 rounded-xl">
               {success}
             </div>
           )}
 
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-secondary">
             Enter your email address and we&apos;ll send you a link to reset your password.
           </p>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-secondary mb-1">
               Email
             </label>
             <input
@@ -67,7 +71,7 @@ export default function ForgotPasswordPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-2.5 rounded-xl bg-primary border border-primary text-primary text-sm placeholder-tertiary focus:border-[#D4A853]/40 focus:outline-none transition-all"
               placeholder="you@example.com"
             />
           </div>
@@ -75,14 +79,14 @@ export default function ForgotPasswordPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-medium rounded-lg transition-colors duration-200"
+            className="w-full py-2.5 px-4 gold-gradient text-black font-semibold rounded-xl hover:scale-[1.02] disabled:opacity-50 transition-all duration-200"
           >
             {loading ? 'Sending...' : 'Send Reset Link'}
           </button>
 
-          <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-center text-sm text-tertiary">
             Remember your password?{' '}
-            <Link href="/login" className="text-indigo-600 hover:text-indigo-500 font-medium">
+            <Link href="/login" className="text-[#D4A853] hover:text-[#F5C542] font-medium transition-colors">
               Sign in
             </Link>
           </p>

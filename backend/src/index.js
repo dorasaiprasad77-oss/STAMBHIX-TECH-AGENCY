@@ -25,6 +25,13 @@ const passwordResetRoutes = require('./routes/passwordReset');
 const memoryRoutes = require('./routes/memories');
 const collectionRoutes = require('./routes/collections');
 const uploadRoutes = require('./routes/uploads');
+const contactRoutes = require('./routes/contact');
+const dashboardRoutes = require('./routes/dashboard');
+const blogRoutes = require('./routes/blog');
+const teamRoutes = require('./routes/team');
+const achievementRoutes = require('./routes/achievements');
+const projectMediaRoutes = require('./routes/projectMedia');
+const settingsRoutes = require('./routes/settings');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -79,6 +86,13 @@ app.use('/api/auth', passwordResetRoutes);
 app.use('/api/memories', memoryRoutes);
 app.use('/api/collections', collectionRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/contact', contactRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/blog', blogRoutes);
+app.use('/api/team', teamRoutes);
+app.use('/api/achievements', achievementRoutes);
+app.use('/api/project-media', projectMediaRoutes);
+app.use('/api/settings', settingsRoutes);
 
 // 404 handler
 app.use((req, res) => {

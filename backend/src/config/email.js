@@ -52,8 +52,8 @@ const sendPasswordResetEmail = async (to, resetUrl, userName) => {
 
   const emailContent = {
     to,
-    from: process.env.EMAIL_FROM || '"MemoryChain" <noreply@memorychain.app>',
-    subject: 'Reset Your MemoryChain Password',
+    from: process.env.EMAIL_FROM || '"Stambhix" <noreply@stambhix.com>',
+    subject: 'Reset Your Stambhix Password',
     html: `
       <!DOCTYPE html>
       <html>
@@ -86,7 +86,7 @@ const sendPasswordResetEmail = async (to, resetUrl, userName) => {
             <p>If you didn't request a password reset, you can safely ignore this email.</p>
           </div>
           <div class="footer">
-            <p>MemoryChain — Your AI-Powered Personal Memory Assistant</p>
+            <p>Stambhix Tech Agency — Your Trusted Marketplace For Every Service</p>
             <p style="margin-top: 4px;">If the button doesn't work, copy this URL into your browser:<br><a href="${resetUrl}" style="color: #4F46E5; word-break: break-all;">${resetUrl}</a></p>
           </div>
         </div>
@@ -106,4 +106,4 @@ const sendPasswordResetEmail = async (to, resetUrl, userName) => {
   }
 };
 
-module.exports = { sendPasswordResetEmail };
+module.exports = { getTransporter, sendPasswordResetEmail };

@@ -1,7 +1,5 @@
 import type { User, Memory, MemoriesResponse, MemoryResponse, MemoryStats, TimelineResponse, WeeklyActivity, TypeDistribution, Collection, CollectionsResponse, CollectionResponse, UploadResponse, UploadMultipleResponse } from '@/types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-
 class ApiClient {
   private token: string | null = null;
 
@@ -22,7 +20,7 @@ class ApiClient {
   }
 
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-    const response = await fetch(`${API_URL}/api${endpoint}`, {
+    const response = await fetch(`/api${endpoint}`, {
       ...options,
       headers: {
         ...this.getHeaders(),
@@ -178,7 +176,7 @@ class ApiClient {
 
   // Export
   async exportMemories(format: 'json' | 'csv' = 'json') {
-    const response = await fetch(`${API_URL}/api/memories/export?format=${format}`, {
+    const response = await fetch(`/api/memories/export?format=${format}`, {
       headers: this.getHeaders(),
     });
 
@@ -245,7 +243,7 @@ class ApiClient {
     const formData = new FormData();
     formData.append('image', file);
 
-    const response = await fetch(`${API_URL}/api/upload`, {
+    const response = await fetch(`/api/upload`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${this.token}`,
@@ -264,7 +262,7 @@ class ApiClient {
     const formData = new FormData();
     files.forEach(file => formData.append('images', file));
 
-    const response = await fetch(`${API_URL}/api/upload/multiple`, {
+    const response = await fetch(`/api/upload/multiple`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${this.token}`,

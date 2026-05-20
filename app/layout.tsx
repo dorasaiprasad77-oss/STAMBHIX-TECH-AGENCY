@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import ThemeInitializer from "./components/ThemeInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MemoryChain — Your AI-Powered Personal Memory Assistant",
+  title: "Stambhix Tech Agency — Digital & Home Service Marketplace",
   description:
-    "MemoryChain uses AI to capture, organize, and preserve your most important memories, thoughts, and experiences. Never forget what matters most.",
-  keywords: ["memories", "AI", "memory assistant", "journal", "notes", "personal"],
+    "Stambhix is a premium technology and services agency offering web development, app development, UI/UX design, SEO, and home services. Trusted professionals, one platform.",
+  keywords: [
+    "tech agency",
+    "web development",
+    "app development",
+    "UI UX design",
+    "SEO",
+    "home services",
+    "digital agency",
+    "Stambhix",
+  ],
+  openGraph: {
+    title: "Stambhix Tech Agency — Building Digital Futures",
+    description: "From cutting-edge digital solutions to trusted home services — Stambhix connects you with verified professionals.",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 export default function RootLayout({
@@ -29,12 +43,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeInitializer />
-        <Navbar />
-        <main className="flex-1">{children}</main>
+      <body className="min-h-full bg-primary text-primary">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
